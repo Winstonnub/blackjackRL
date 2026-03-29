@@ -1,0 +1,422 @@
+/* Reset & base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background: #1a1a2e;
+  color: #e0e0e0;
+  min-height: 100vh;
+}
+
+.app {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Header */
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 30px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #333;
+}
+
+header h1 {
+  font-size: 1.6rem;
+  color: #4caf50;
+}
+
+nav {
+  display: flex;
+  gap: 8px;
+}
+
+nav button {
+  padding: 8px 20px;
+  border: 1px solid #444;
+  background: transparent;
+  color: #aaa;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: all 0.2s;
+}
+
+nav button:hover {
+  border-color: #4caf50;
+  color: #fff;
+}
+
+nav button.active {
+  background: #4caf50;
+  color: #fff;
+  border-color: #4caf50;
+}
+
+/* Common */
+h2 {
+  font-size: 1.3rem;
+  margin-bottom: 15px;
+  color: #fff;
+}
+
+h3 {
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+  color: #ddd;
+}
+
+hr {
+  border: none;
+  border-top: 1px solid #333;
+  margin: 25px 0;
+}
+
+.muted {
+  color: #777;
+  font-style: italic;
+}
+
+.error {
+  color: #f44336;
+  margin-top: 10px;
+}
+
+/* Form elements */
+label {
+  display: block;
+  margin-bottom: 12px;
+  font-size: 0.85rem;
+  color: #aaa;
+}
+
+label select,
+label input {
+  display: block;
+  width: 100%;
+  margin-top: 4px;
+  padding: 8px 12px;
+  background: #16213e;
+  border: 1px solid #333;
+  color: #e0e0e0;
+  border-radius: 6px;
+  font-size: 0.95rem;
+}
+
+label select:focus,
+label input:focus {
+  outline: none;
+  border-color: #4caf50;
+}
+
+button {
+  padding: 10px 24px;
+  background: #4caf50;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.95rem;
+  transition: background 0.2s;
+}
+
+button:hover {
+  background: #388e3c;
+}
+
+button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Train Panel */
+.train-panel {
+  background: #16213e;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.train-panel form {
+  display: grid;
+  gap: 5px;
+}
+
+.epsilon-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.progress-bar-container {
+  margin-top: 15px;
+  background: #0f3460;
+  border-radius: 8px;
+  overflow: hidden;
+  position: relative;
+  height: 30px;
+}
+
+.progress-bar {
+  height: 100%;
+  background: linear-gradient(90deg, #4caf50, #81c784);
+  transition: width 0.5s ease;
+}
+
+.progress-bar-container span {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+/* Benchmark Cards */
+.benchmark-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 12px;
+  margin: 15px 0;
+}
+
+.card {
+  background: #16213e;
+  padding: 16px;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.card-value {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.card-label {
+  font-size: 0.8rem;
+  color: #888;
+  text-transform: uppercase;
+}
+
+/* Chart */
+.chart-container {
+  background: #16213e;
+  padding: 20px;
+  border-radius: 10px;
+  margin: 15px 0;
+}
+
+/* Model Meta */
+.model-meta {
+  font-size: 0.85rem;
+  color: #888;
+  margin-top: 10px;
+}
+
+/* Model Selector */
+.model-selector {
+  margin-bottom: 15px;
+}
+
+/* Play Mode */
+.play-mode {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.play-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.play-controls {
+  display: flex;
+  align-items: flex-end;
+  gap: 12px;
+}
+
+.play-controls label {
+  margin-bottom: 0;
+}
+
+.play-controls select {
+  width: auto;
+  min-width: 200px;
+}
+
+/* Table */
+.table {
+  background: #0f3460;
+  border-radius: 12px;
+  padding: 30px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+/* Hand Display */
+.hand-display {
+  background: #16213e;
+  border-radius: 10px;
+  padding: 20px 40px;
+  min-width: 200px;
+}
+
+.hand-display.win {
+  box-shadow: 0 0 15px rgba(76, 175, 80, 0.5);
+}
+
+.hand-display.loss {
+  box-shadow: 0 0 15px rgba(244, 67, 54, 0.5);
+}
+
+.hand-display.draw {
+  box-shadow: 0 0 15px rgba(255, 152, 0, 0.5);
+}
+
+.hand-label {
+  font-size: 0.8rem;
+  color: #888;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+
+.hand-sum {
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+
+.hand-ace {
+  font-size: 0.75rem;
+  color: #ff9800;
+  margin-top: 4px;
+  min-height: 1em;
+}
+
+/* Action Buttons */
+.action-buttons {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.btn-hit {
+  background: #f44336;
+  padding: 12px 40px;
+  font-size: 1.1rem;
+}
+
+.btn-hit:hover {
+  background: #d32f2f;
+}
+
+.btn-stand {
+  background: #2196f3;
+  padding: 12px 40px;
+  font-size: 1.1rem;
+}
+
+.btn-stand:hover {
+  background: #1976d2;
+}
+
+.btn-deal {
+  background: #4caf50;
+  padding: 12px 40px;
+  font-size: 1.1rem;
+  margin-top: 10px;
+}
+
+.model-hint {
+  font-size: 0.85rem;
+  color: #ff9800;
+  padding: 6px 14px;
+  border: 1px dashed #ff9800;
+  border-radius: 6px;
+}
+
+/* Round Result */
+.round-result {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.dealer-result {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #e0e0e0;
+}
+
+.dealer-result .busted {
+  color: #f44336;
+  font-weight: 700;
+}
+
+.result-badge {
+  padding: 10px 24px;
+  border-radius: 8px;
+  color: #fff;
+  font-weight: 600;
+  font-size: 1rem;
+  text-align: center;
+}
+
+.model-actions {
+  font-size: 0.8rem;
+  font-weight: 400;
+  margin-top: 4px;
+  opacity: 0.9;
+}
+
+/* Stats Panel */
+.stats-panel {
+  background: #16213e;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.stat-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 15px;
+  margin-bottom: 8px;
+  background: #0f3460;
+  border-radius: 6px;
+}
+
+.stat-numbers {
+  display: flex;
+  gap: 15px;
+  font-size: 0.9rem;
+}
+
+.stat-numbers .win {
+  color: #4caf50;
+}
+.stat-numbers .loss {
+  color: #f44336;
+}
+.stat-numbers .draw {
+  color: #ff9800;
+}
+.stat-numbers .rate {
+  color: #aaa;
+}
