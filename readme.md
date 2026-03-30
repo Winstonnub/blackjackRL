@@ -1,6 +1,4 @@
-# Blackjack RL
-
-## Train a model and compare whether you are better than an AI who have played thousands or millions of games
+# Blackjack RL - Train a model and compare whether you are better than an AI who have played thousands or millions of games🃏
 
 ## Motivation
 I created this project as someone who is really interested in reinforcement learning and is trying to learn different concepts and algorithms.
