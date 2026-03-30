@@ -1,0 +1,102 @@
+[
+  {
+    "model_id": "qlearning",
+    "name": "Q-Learning (1M eps)",
+    "algorithm": "qlearning",
+    "episodes": 1000000,
+    "trained_at": "2026-03-29",
+    "hyperparams": {
+      "learning_rate": 0.01,
+      "discount_factor": 0.95,
+      "epsilon_start": 1.0,
+      "epsilon_end": 0.1
+    },
+    "benchmarks": {
+      "win_rate": 0.4304,
+      "loss_rate": 0.4802,
+      "draw_rate": 0.0894,
+      "avg_reward": -0.0498,
+      "house_edge_percent": 4.98
+    }
+  },
+  {
+    "model_id": "monte_carlo",
+    "name": "Monte Carlo (1M eps)",
+    "algorithm": "monte_carlo",
+    "episodes": 1000000,
+    "trained_at": "2026-03-29",
+    "hyperparams": {
+      "learning_rate": 0.01,
+      "discount_factor": 0.95,
+      "epsilon_start": 1.0,
+      "epsilon_end": 0.1
+    },
+    "benchmarks": {
+      "win_rate": 0.4333,
+      "loss_rate": 0.4889,
+      "draw_rate": 0.0778,
+      "avg_reward": -0.0556,
+      "house_edge_percent": 5.56
+    }
+  },
+  {
+    "model_id": "sarsa",
+    "name": "SARSA (1M eps)",
+    "algorithm": "sarsa",
+    "episodes": 1000000,
+    "trained_at": "2026-03-29",
+    "hyperparams": {
+      "learning_rate": 0.01,
+      "discount_factor": 0.95,
+      "epsilon_start": 1.0,
+      "epsilon_end": 0.1
+    },
+    "benchmarks": {
+      "win_rate": 0.4333,
+      "loss_rate": 0.4795,
+      "draw_rate": 0.0872,
+      "avg_reward": -0.0463,
+      "house_edge_percent": 4.63
+    }
+  },
+  {
+    "model_id": "expected_sarsa",
+    "name": "Expected SARSA (1M eps)",
+    "algorithm": "expected_sarsa",
+    "episodes": 1000000,
+    "trained_at": "2026-03-29",
+    "hyperparams": {
+      "learning_rate": 0.01,
+      "discount_factor": 0.95,
+      "epsilon_start": 1.0,
+      "epsilon_end": 0.1
+    },
+    "benchmarks": {
+      "win_rate": 0.4327,
+      "loss_rate": 0.4745,
+      "draw_rate": 0.0928,
+      "avg_reward": -0.0417,
+      "house_edge_percent": 4.17
+    }
+  },
+  {
+    "model_id": "double_qlearning",
+    "name": "Double Q-Learning (1M eps)",
+    "algorithm": "double_qlearning",
+    "episodes": 1000000,
+    "trained_at": "2026-03-29",
+    "hyperparams": {
+      "learning_rate": 0.01,
+      "discount_factor": 0.95,
+      "epsilon_start": 1.0,
+      "epsilon_end": 0.1
+    },
+    "benchmarks": {
+      "win_rate": 0.4322,
+      "loss_rate": 0.4794,
+      "draw_rate": 0.0884,
+      "avg_reward": -0.0472,
+      "house_edge_percent": 4.72
+    }
+  }
+]

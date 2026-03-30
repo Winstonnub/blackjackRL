@@ -79,6 +79,15 @@ All results from training at **1,000,000 episodes**, evaluated over **100,000 gr
 
 
 
+## Hosted Version (Vercel)
+
+The hosted version runs entirely in the browser — no backend required.
+
+- All 5 models are pre-trained at 1M episodes and served as static JSON (~18 KB each)
+- Game logic (card drawing, dealer play, bust detection) is replicated in JavaScript
+- Training is disabled; all models are pre-loaded and ready to play against
+- The local dev version (`npm run dev`) connects to the Python backend and supports training your own models
+
 ## Tech Stack
 Backend:  Python · FastAPI · Gymnasium (Blackjack-v1) · NumPy
 Frontend: React · Vite · Recharts

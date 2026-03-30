@@ -5,6 +5,8 @@ import BenchmarkCards from "./BenchmarkCards";
 import LearningCurveChart from "./LearningCurveChart";
 import TrainPanel from "../Train/TrainPanel";
 
+const STATIC_MODE = import.meta.env.VITE_STATIC_MODE === "true";
+
 export default function Dashboard() {
   const [models, setModels] = useState([]);
   const [selectedId, setSelectedId] = useState(null);
@@ -29,9 +31,8 @@ export default function Dashboard() {
 
   return (
     <div className="dashboard">
-      <TrainPanel onModelTrained={refreshModels} />
-
-      <hr />
+      {!STATIC_MODE && <TrainPanel onModelTrained={refreshModels} />}
+      {!STATIC_MODE && <hr />}
 
       <h2>Model Benchmarks</h2>
       <ModelSelector
