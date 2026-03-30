@@ -26,12 +26,12 @@ cd blackjackRL/frontend
 npm install
 ```
 
-### Running
-# from the blackjackRL/ root
+## Running
+from the blackjackRL/ root
 ```bash
 uvicorn backend.main:app --reload --port 8000
 ```
-# from the blackjackRL/frontend/ directory
+from the blackjackRL/frontend/ directory
 ```bash
 npm run dev
 ```
