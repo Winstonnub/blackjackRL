@@ -8,6 +8,7 @@ import StatsPanel from "./StatsPanel";
 export default function PlayMode() {
   const [models, setModels] = useState([]);
   const [selectedModelId, setSelectedModelId] = useState(null);
+  const [hintVisible, setHintVisible] = useState(false);
   const { gameState, loading, newGame, doAction, humanStats, modelStats, resetStats } =
     useGame();
 
@@ -16,8 +17,14 @@ export default function PlayMode() {
   }, []);
 
   const startNewRound = useCallback(() => {
+    setHintVisible(false);
     newGame(selectedModelId);
   }, [newGame, selectedModelId]);
+
+  const handleAction = useCallback((action) => {
+    setHintVisible(false);
+    doAction(action);
+  }, [doAction]);
 
   const hand = gameState?.hand_state;
 
@@ -75,23 +82,28 @@ export default function PlayMode() {
             <div className="action-buttons">
               <button
                 className="btn-hit"
-                onClick={() => doAction("hit")}
+                onClick={() => handleAction("hit")}
                 disabled={loading}
               >
                 Hit
               </button>
               <button
                 className="btn-stand"
-                onClick={() => doAction("stand")}
+                onClick={() => handleAction("stand")}
                 disabled={loading}
               >
                 Stand
               </button>
 
               {gameState.model_recommendation && (
-                <div className="model-hint">
-                  AI suggests: <strong>{gameState.model_recommendation}</strong>
-                </div>
+                <button
+                  className="btn-hint"
+                  onClick={() => setHintVisible((v) => !v)}
+                >
+                  {hintVisible
+                    ? `AI: ${gameState.model_recommendation}`
+                    : "Reveal AI hint"}
+                </button>
               )}
             </div>
           )}

@@ -4,6 +4,11 @@ const RESULT_COLORS = {
   draw: "#ff9800",
 };
 
+const ACTION_COLORS = {
+  hit: "#f44336",
+  stand: "#2196f3",
+};
+
 export default function RoundResult({ outcome }) {
   if (!outcome) return null;
 
@@ -27,13 +32,24 @@ export default function RoundResult({ outcome }) {
       </div>
 
       {model && (
-        <div
-          className="result-badge"
-          style={{ background: RESULT_COLORS[model.result] }}
-        >
-          AI: {model.result.toUpperCase()}
-          <div className="model-actions">
-            Actions: {model.actions_taken.join(" → ")}
+        <div className="ai-result">
+          <div
+            className="result-badge"
+            style={{ background: RESULT_COLORS[model.result] }}
+          >
+            AI: {model.result.toUpperCase()}
+          </div>
+          <div className="ai-actions">
+            <span className="ai-actions-label">AI played:</span>
+            {model.actions_taken.map((action, i) => (
+              <span
+                key={i}
+                className="action-chip"
+                style={{ background: ACTION_COLORS[action] }}
+              >
+                {action}
+              </span>
+            ))}
           </div>
         </div>
       )}
