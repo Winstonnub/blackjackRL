@@ -19,6 +19,9 @@ class ModelPlaythrough:
     actions_taken: list[str]
     reward: float
     result: str  # "win" | "loss" | "draw"
+    dealer_final_sum: int = 0
+    dealer_busted: bool = False
+    player_final_sum: int = 0
 
 
 @dataclass
@@ -59,10 +62,16 @@ def _play_model_hand(env_seed: int, agent: BaseAgent) -> ModelPlaythrough:
         obs, reward, terminated, truncated, _ = env.step(action)
         done = terminated or truncated
 
+    bj = env.unwrapped
+    dealer_sum = sum_hand(bj.dealer)
+
     return ModelPlaythrough(
         actions_taken=actions,
         reward=float(reward),
         result=_result_from_reward(reward),
+        dealer_final_sum=dealer_sum,
+        dealer_busted=dealer_sum > 21,
+        player_final_sum=sum_hand(bj.player),
     )
 
 

@@ -19,6 +19,9 @@ class ModelResult(BaseModel):
     result: str  # "win" | "loss" | "draw"
     reward: float
     actions_taken: list[str]
+    dealer_final_sum: int | None = None
+    dealer_busted: bool = False
+    player_final_sum: int | None = None
 
 
 class HumanResult(BaseModel):

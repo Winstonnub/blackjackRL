@@ -43,6 +43,9 @@ def _build_response(session) -> GameStateResponse:
                 result=mp.result,
                 reward=mp.reward,
                 actions_taken=mp.actions_taken,
+                dealer_final_sum=mp.dealer_final_sum,
+                dealer_busted=mp.dealer_busted,
+                player_final_sum=mp.player_final_sum,
             )
         outcome = Outcome(
             human=human_result,

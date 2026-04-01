@@ -363,53 +363,79 @@ button:disabled {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 10px;
+  gap: 12px;
+  width: 100%;
 }
 
-.dealer-result {
-  font-size: 1.2rem;
-  font-weight: 600;
-  color: #e0e0e0;
+.same-deal-note {
+  font-size: 0.8rem;
+  color: #777;
+  font-style: italic;
 }
 
-.dealer-result .busted {
-  color: #f44336;
-  font-weight: 700;
+.game-panels {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+  width: 100%;
 }
 
-.result-badge {
-  padding: 10px 24px;
-  border-radius: 8px;
-  color: #fff;
-  font-weight: 600;
-  font-size: 1rem;
+.game-panel {
+  background: #16213e;
+  border-radius: 10px;
+  padding: 16px;
   text-align: center;
 }
 
-.ai-result {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 8px;
-}
-
-.ai-actions {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-.ai-actions-label {
+.game-panel-title {
   font-size: 0.8rem;
   color: #aaa;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 10px;
+}
+
+.game-panel-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 4px 0;
+  font-size: 0.9rem;
+}
+
+.game-panel-label {
+  color: #888;
+}
+
+.game-panel-value {
+  font-weight: 600;
+}
+
+.game-panel-value .busted {
+  color: #f44336;
+  font-size: 0.75rem;
+}
+
+.game-panel-actions {
+  display: flex;
+  gap: 5px;
+  justify-content: center;
+  margin: 8px 0;
+  flex-wrap: wrap;
+}
+
+.game-panel-result {
+  margin-top: 10px;
+  padding: 6px 16px;
+  border-radius: 6px;
+  color: #fff;
+  font-weight: 700;
+  font-size: 0.95rem;
 }
 
 .action-chip {
   padding: 3px 10px;
   border-radius: 12px;
-  font-size: 0.8rem;
+  font-size: 0.75rem;
   font-weight: 600;
   color: #fff;
   text-transform: uppercase;

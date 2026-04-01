@@ -12,7 +12,7 @@ function resultFromReward(reward) {
   return "draw";
 }
 
-/** Play the agent's full hand from a given seed, return actions + result */
+/** Play the agent's full hand from a given seed, return actions + result + dealer info */
 function playAgentHand(agent, seed) {
   const state = newHand(seed);
   const actions = [];
@@ -23,10 +23,15 @@ function playAgentHand(agent, seed) {
     step(state, action);
   }
 
+  const { dealerFinalSum, dealerBusted } = dealerInfo(state);
+
   return {
     actions_taken: actions,
     reward: state.reward,
     result: resultFromReward(state.reward),
+    dealer_final_sum: dealerFinalSum,
+    dealer_busted: dealerBusted,
+    player_final_sum: playerFinalSum(state),
   };
 }
 
@@ -111,6 +116,9 @@ export function useGame() {
                   result: modelPlaythrough.result,
                   reward: modelPlaythrough.reward,
                   actions_taken: modelPlaythrough.actions_taken,
+                  dealer_final_sum: modelPlaythrough.dealer_final_sum,
+                  dealer_busted: modelPlaythrough.dealer_busted,
+                  player_final_sum: modelPlaythrough.player_final_sum,
                 }
               : null,
             dealer_final_sum: dealerFinalSum,
